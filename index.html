@@ -87,6 +87,9 @@
                 <p>Price: $22,000.00</p>
                 <button class="cart-button" onclick="addToCart('Nami', $22,000.00)">Add to Cart</button>
             </div>
+        </div>
+        <button class="cart-button" onclick="showCart()">View Cart</button>
+    </div>
             <!-- Item 2 -->
             <div class="item">
                 <img src="Girl 2.jpg" alt="Jessica">
@@ -95,6 +98,9 @@
                 <p>Price: $21,000.00</p>
                 <button class="cart-button" onclick="addToCart('Jessica', $21,000.00)">Add to Cart</button>
             </div>
+         </div>
+         <button class="cart-button" onclick="showCart()">View Cart</button>
+    </div>
             <!-- Item 3 -->
             <div class="item">
                 <img src="Girl 3.jpg" alt="Heidi">
@@ -345,24 +351,42 @@
         </form>
     </div>
 
-    <script>
-        let cart = [];
+ <script>
+    let cart = [];
 
-        function enterSite() {
-            document.querySelector('.intro').style.display = 'none';
-            document.querySelector('#marketplace').style.display = 'block';
+    function enterSite() {
+        document.querySelector('.intro').style.display = 'none';
+        document.querySelector('#marketplace').style.display = 'block';
+    }
+
+    function addToCart(productName, price) {
+        cart.push({ name: productName, price: price });
+        alert(`${productName} has been added to your cart.`);
+    }
+
+    function showCart() {
+        const cartItemsDiv = document.querySelector('#cart-items');
+        cartItemsDiv.innerHTML = ''; // Clear previous cart items
+
+        if (cart.length === 0) {
+            cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+        } else {
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.innerHTML = `<p>${item.name} - $${item.price.toFixed(2)}</p>`;
+                cartItemsDiv.appendChild(itemDiv);
+            });
         }
 
-        function addToCart(productName, price) {
-            cart.push({ name: productName, price: price });
-            alert(`${productName} has been added to your cart.`);
-        }
+        document.querySelector('#marketplace').style.display = 'none';
+        document.querySelector('#cart').style.display = 'block';
+    }
 
-        function proceedToCheckout() {
-            document.querySelector('#marketplace').style.display = 'none';
-            document.querySelector('#cart').style.display = 'none';
-            document.querySelector('#checkout').style.display = 'block';
-        }
-    </script>
+    function proceedToCheckout() {
+        document.querySelector('#cart').style.display = 'none';
+        document.querySelector('#checkout').style.display = 'block';
+    }
+</script>
+
 </body>
 </html>
