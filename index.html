@@ -432,12 +432,12 @@
             if (cart.length === 0) {
             cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
             } else {
-            cart.forEach((item, index) => {
-            const itemDiv = document.createElement('div');
-            itemDiv.innerHTML = `<p>${item.name} - $${item.price.toFixed(2)} (Quantity: ${item.quantity})</p>`;
-            cartItemsDiv.appendChild(itemDiv);
+                cart.forEach((item, index) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.innerHTML = `<p>${item.name} - $${item.price.toFixed(2)} (Quantity: ${item.quantity})</p>`;
+                    cartItemsDiv.appendChild(itemDiv);
                 });
-        }
+            }
 
             document.querySelector('#marketplace').style.display = 'none';
             document.querySelector('#cart').style.display = 'block';
