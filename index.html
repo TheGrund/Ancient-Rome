@@ -384,30 +384,29 @@
                 <button class="cart-button" onclick="addToCart('Daisy', $22,000.00)">Add to Cart</button>
             </div>
         </div>
-    </div>
 
-   <!-- Cart Page -->
-    <div class="cart" id="cart" style="display: none;">
-        <h1>Your Cart</h1>
-        <div id="cart-items">
-            <!-- Dynamically generated cart items will go here -->
+       <!-- Cart Page -->
+            <div class="cart" id="cart" style="display: none;">
+            <h1>Your Cart</h1>
+            <div id="cart-items">
+                <!-- Dynamically generated cart items will go here -->
+            </div>
+            <button class="cart-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
         </div>
-        <button class="cart-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
-    </div>
 
-    <!-- Checkout Page -->
-    <div class="checkout" id="checkout" style="display: none;">
-        <h1>Checkout</h1>
-        <form id="checkout-form">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="address">Address:</label><br>
-            <textarea id="address" name="address" required></textarea><br><br>
-            <label for="card">Credit Card Number:</label><br>
-            <input type="text" id="card" name="card" required><br><br>
-            <button type="submit" class="cart-button">Complete Purchase</button>
-        </form>
-    </div>
+        <!-- Checkout Page -->
+            <div class="checkout" id="checkout" style="display: none;">
+            <h1>Checkout</h1>
+            <form id="checkout-form">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="address">Address:</label><br>
+                <textarea id="address" name="address" required></textarea><br><br>
+                <label for="card">Credit Card Number:</label><br>
+                <input type="text" id="card" name="card" required><br><br>
+                <button type="submit" class="cart-button">Complete Purchase</button>
+            </form>
+        </div>
 
  <script>
     let cart = [];
