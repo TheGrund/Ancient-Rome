@@ -71,7 +71,7 @@
     <div class="intro">
         <h1>Welcome to Ancient Rome</h1>
         <p>Discover the marvels of Ancient Rome and explore our marketplace, if you dare.</p>
-        <img src="Pantheon 2.jpg" alt="Pantheon">
+        <img src="Pantheon 2.jpeg" alt="Pantheon">
         <button onclick="enterSite()">Enter the Marketplace</button>
     </div>
 
@@ -86,6 +86,7 @@
                 <h2>Nami</h2>
                 <p>20 years old</p>
                 <p>Price: $22,000.00</p>
+                <button class="cart-button" onclick="addToCart('Product Name', XX.XX)">Add to Cart</button>
             </div>
             <!-- Item 2 -->
             <div class="item">
@@ -272,7 +273,7 @@
             <!-- Item 28 -->
             <div class="item">
                 <img src="Girl 28.jpg" alt="Product Image">
-                <h2>Lola/h2>
+                <h2>Lola<h2>
                 <p>29 years old</p>
                 <p>Price: $18,000.00</p>
             </div>
@@ -293,10 +294,46 @@
         </div>
     </div>
 
+   <!-- Cart Page -->
+    <div class="cart" id="cart" style="display: none;">
+        <h1>Your Cart</h1>
+        <div id="cart-items">
+            <!-- Dynamically generated cart items will go here -->
+        </div>
+        <button class="cart-button" onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+
+    <!-- Checkout Page -->
+    <div class="checkout" id="checkout" style="display: none;">
+        <h1>Checkout</h1>
+        <form id="checkout-form">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" required></textarea><br><br>
+            <label for="card">Credit Card Number:</label><br>
+            <input type="text" id="card" name="card" required><br><br>
+            <button type="submit" class="cart-button">Complete Purchase</button>
+        </form>
+    </div>
+
     <script>
+        let cart = [];
+
         function enterSite() {
             document.querySelector('.intro').style.display = 'none';
             document.querySelector('#marketplace').style.display = 'block';
+        }
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            alert(`${productName} has been added to your cart.`);
+        }
+
+        function proceedToCheckout() {
+            document.querySelector('#marketplace').style.display = 'none';
+            document.querySelector('#cart').style.display = 'none';
+            document.querySelector('#checkout').style.display = 'block';
         }
     </script>
 </body>
