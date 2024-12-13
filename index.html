@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Rome Marketplace</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .intro {
+            text-align: center;
+            padding: 50px;
+            background: url('your-background-image.jpg') no-repeat center center/cover;
+            height: 100vh;
+            color: #fff;
+        }
+        .intro h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .intro button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #8b4513;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .marketplace {
+            padding: 20px;
+            text-align: center;
+        }
+        .marketplace h1 {
+            margin-bottom: 20px;
+        }
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        .item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .item h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .item p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ancient Rome Intro Page -->
+    <div class="intro">
+        <h1>Welcome to Ancient Rome</h1>
+        <p>Discover the marvels of Ancient Rome and explore our marketplace.</p>
+        <button onclick="enterSite()">Enter the Marketplace</button>
+    </div>
+
+    <!-- Ancient Rome Marketplace Page -->
+    <div class="marketplace" id="marketplace" style="display: none;">
+        <h1>Ancient Rome Marketplace</h1>
+        <div class="items">
+            <!-- Item 1 -->
+            <div class="item">
+                <img src="placeholder.jpg" alt="Product Image">
+                <h2>Product Name 1</h2>
+                <p>Product description goes here.</p>
+                <p>Price: $XX.XX</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="item">
+                <img src="placeholder.jpg" alt="Product Image">
+                <h2>Product Name 2</h2>
+                <p>Product description goes here.</p>
+                <p>Price: $XX.XX</p>
+            </div>
+
+            <!-- Add more items as needed -->
+        </div>
+    </div>
+
+    <script>
+        function enterSite() {
+            document.querySelector('.intro').style.display = 'none';
+            document.querySelector('#marketplace').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
