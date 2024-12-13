@@ -4,45 +4,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ancient Rome Marketplace</title>
     <style>
-        body {
+body {
             font-family: 'Times New Roman', Times, serif;
             margin: 0;
             padding: 0;
             background-color: #000;
             color: #fff;
         }
-        
-        /* Style for the intro page container */
-        #intro-page {
-            display: flex;
-            flex-direction: column; /* Stack image and button vertically */
-            align-items: center;   /* Center horizontally */
-            justify-content: center; /* Center vertically */
-            height: 100vh;          /* Full viewport height */
-            text-align: center;     /* Center text alignment */
-            background-color: #f8f8f8; /* Optional background color */
+
+        .intro {
+            text-align: center;
+            padding: 50px;
+            background: url('your-background-image.jpg') no-repeat center center/cover;
+            height: 100vh;
+            color: #fff;
         }
-    
-        /* Optional: Style the image */
-        #intro-image {
-            max-width: 80%;         /* Responsive sizing */
-            height: auto;           /* Maintain aspect ratio */
-            margin-bottom: 20px;    /* Space between image and button */
+
+        .intro img {
+            max-width: 80%;
+            max-height: 400px;
+            margin-bottom: 20px;
+            object-fit: contain;
         }
-    
-        /* Optional: Style the button */
-        #intro-button {
+
+        .intro h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .intro button {
             padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff; /* Blue color */
-            color: white;
+            font-size: 1.2em;
+            background-color: #8b4513;
+            color: #fff;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
+            margin-top: 20px
         }
-    
-        #intro-button:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+
+        .marketplace, .cart, .checkout {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            background-color: #000;
         }
             
 
